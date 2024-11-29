@@ -1,6 +1,6 @@
 # React Native Video Course App 👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Build React Native Full Stack App | Video Course Learning | React Native Project | Expo , HyGraph 🚀 Master React Native Full Stack Development with Expo and HyGraph! 🚀
 
 ## Get started
 
