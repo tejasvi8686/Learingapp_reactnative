@@ -41,7 +41,7 @@ const LoginScreen = () => {
             Sign In
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={handleSignUp} style={styles.button}>
+        <TouchableOpacity onPress={handleSignUp}>
           <Text
             style={{
               marginTop: 10,
