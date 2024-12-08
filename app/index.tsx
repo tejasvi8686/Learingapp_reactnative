@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createContext, useState } from "react";
 import { View, StyleSheet } from "react-native";
 import LoginScreen from "./Screens/LoginScreen";
 import { useEffect } from "react";
@@ -7,33 +7,34 @@ import { client } from "./Utils/KindConfig";
 import { NavigationContainer } from "@react-navigation/native";
 import { NavigationIndependentTree } from "@react-navigation/native";
 
+export const AuthContext = createContext(null);
 export default function Page() {
+  const [auth, setAuth] = useState(false);
+
   useEffect(() => {
     checkAuthenticate();
-  }, []);
+  }, [auth]);
 
   const checkAuthenticate = async () => {
     // Using `isAuthenticated` to check if the user is authenticated or not
     if (await client.isAuthenticated) {
       const userProfile = await client.getUserDetails();
-      console.log(userProfile);
-      console.log("Authenticated sucessfully");
-
-      // Need to implement, e.g: call an api, etc...
+      setAuth(true);
     } else {
-      return <LoginScreen />;
-      // Need to implement, e.g: redirect user to sign in, etc..
+      setAuth(false);
     }
   };
 
   return (
     <View style={styles.container}>
-      <NavigationIndependentTree>
-        {/* <LoginScreen /> */}
-        <NavigationContainer>
-          <TabNavigation />
-        </NavigationContainer>
-      </NavigationIndependentTree>
+      <AuthContext.Provider value={{ auth, setAuth } as any}>
+        <NavigationIndependentTree>
+          {/* <LoginScreen /> */}
+          <NavigationContainer>
+            {auth ? <TabNavigation /> : <LoginScreen />}
+          </NavigationContainer>
+        </NavigationIndependentTree>
+      </AuthContext.Provider>
     </View>
   );
 }
