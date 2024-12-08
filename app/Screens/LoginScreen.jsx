@@ -1,14 +1,23 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TouchableOpacity,
-} from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import color from "../Utils/Color";
+import { client } from "../Utils/KindConfig";
 
 const LoginScreen = () => {
+  const handleSignUp = async () => {
+    const token = await client.register();
+    if (token) {
+      console.log("Authenticated sucessfully");
+    }
+  };
+
+  const handleSignIn = async () => {
+    const token = await client.login();
+    if (token) {
+      console.log("Authenticated sucessfully");
+    }
+  };
+
   return (
     <View>
       <Image
@@ -25,19 +34,14 @@ const LoginScreen = () => {
           Learn Programming to Build Life Project{" "}
         </Text>
         {/* Sign In button */}
-        <TouchableOpacity
-          onPress={() => console.log("click the sign button")}
-          style={styles.button}
-        >
+        <TouchableOpacity onPress={handleSignIn} style={styles.button}>
           <Text
             style={{ textAlign: "center", color: color.WHITE, fontSize: 18 }}
           >
             Sign In
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => console.log("click the create account button ")}
-        >
+        <TouchableOpacity onPress={handleSignUp} style={styles.button}>
           <Text
             style={{
               marginTop: 10,
