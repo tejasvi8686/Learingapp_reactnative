@@ -5,7 +5,6 @@ import { client } from "../Utils/KindConfig";
 import { useContext } from "react";
 import { AuthContext } from "../index";
 
-
 const LoginScreen = () => {
   const { auth, setAuth } = useContext(AuthContext);
   const handleSignUp = async () => {
@@ -28,7 +27,7 @@ const LoginScreen = () => {
     <View>
       <Image
         source={require("../../assets/images/rocket.jpg")}
-        style={{ width: "100%", height: 400, resizeMode: "cover" }} // Fixed styling
+        style={{ width: "100%", height: 400, resizeMode: "cover" }}
       />
 
       <View style={{ padding: 20 }}>

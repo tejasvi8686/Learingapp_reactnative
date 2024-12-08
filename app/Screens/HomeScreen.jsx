@@ -3,6 +3,7 @@ import React from "react";
 import { client } from "../Utils/KindConfig";
 import { AuthContext } from "../index";
 import { useContext } from "react";
+import Header from "../Components/Header";
 
 export default function HomeScreen() {
   const { auth, setAuth } = useContext(AuthContext);
@@ -15,10 +16,11 @@ export default function HomeScreen() {
   };
   return (
     <View>
-      <Text>HomeScreen</Text>
+    <Header />
+      {/* <Text>HomeScreen</Text>
       <Button title="Logout" onPress={handleLogout}>
         Press Me
-      </Button>
+      </Button> */}
     </View>
   );
 }
