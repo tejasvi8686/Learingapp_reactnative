@@ -1,9 +1,10 @@
 import React from "react";
-import { StatusBar } from "expo-status-bar";
-import { Text, View, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
 import LoginScreen from "./Screens/LoginScreen";
 import { useEffect } from "react";
+import TabNavigation from "./Navigations/TabNavigation";
 import { client } from "./Utils/KindConfig";
+import { NavigationContainer } from "@react-navigation/native";
 
 export default function Page() {
   useEffect(() => {
@@ -24,10 +25,13 @@ export default function Page() {
   };
 
   return (
-    <View style={styles.container}>
-      <StatusBar style="auto" />
-      <LoginScreen />
-    </View>
+    <NavigationContainer>
+      <View style={styles.container}>
+        {/* <LoginScreen /> */}
+
+        <TabNavigation />
+      </View>
+    </NavigationContainer>
   );
 }
 
