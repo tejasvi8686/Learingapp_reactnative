@@ -2,6 +2,7 @@ import { View, Text, Image, TextInput, StyleSheet } from "react-native";
 import React, { useEffect, useState } from "react";
 import { client } from "../Utils/KindConfig";
 import Color from "../Utils/Color";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function Header() {
   const [userDetail, setUserDetail] = useState();
@@ -40,7 +41,8 @@ export default function Header() {
         </View>
       </View>
       <View style={styles.input}>
-        <TextInput placeholder="Search" />
+        <Ionicons name="search" size={24} color={Color.GRAY} />
+        <TextInput placeholder="Search"  />
       </View>
     </>
   );
@@ -53,5 +55,11 @@ const styles = StyleSheet.create({
     padding: 10,
     paddingHorizontal: 20,
     marginTop: 20,
+    display: "flex",
+    flexDirection: "row",
+    gap: 7,
+    alignItems: "center",
+    borderWidth: 0.5,
+    borderColor:Color.PRIMARY,
   },
 });
