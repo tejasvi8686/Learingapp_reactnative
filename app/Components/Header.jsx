@@ -42,7 +42,7 @@ export default function Header() {
       </View>
       <View style={styles.input}>
         <Ionicons name="search" size={24} color={Color.GRAY} />
-        <TextInput placeholder="Search"  />
+        <TextInput placeholder="Search" />
       </View>
     </>
   );
@@ -60,6 +60,6 @@ const styles = StyleSheet.create({
     gap: 7,
     alignItems: "center",
     borderWidth: 0.5,
-    borderColor:Color.PRIMARY,
+    borderColor: Color.PRIMARY,
   },
 });
