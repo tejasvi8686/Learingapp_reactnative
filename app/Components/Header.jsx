@@ -34,7 +34,12 @@ export default function Header() {
         <View>
           <Text style={{ fontSize: 18, fontFamily: "outfit" }}>Welcome</Text>
           <Text
-            style={{ fontSize: 20, fontWeight: "bold", color: Color.PRIMARY }}
+            style={{
+              fontSize: 20,
+              fontWeight: "bold",
+              color: Color.PRIMARY,
+              fontFamily: "outfit-bold",
+            }}
           >
             Hello {userDetail?.given_name}
           </Text>
@@ -42,7 +47,10 @@ export default function Header() {
       </View>
       <View style={styles.input}>
         <Ionicons name="search" size={24} color={Color.GRAY} />
-        <TextInput placeholder="Search" />
+        <TextInput
+          placeholder="Search"
+          style={{ fontFamily: "outfit", width: "100%" }}
+        />
       </View>
     </>
   );

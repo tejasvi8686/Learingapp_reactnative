@@ -8,11 +8,13 @@ import { useFonts } from "expo-font";
 import { NavigationContainer } from "@react-navigation/native";
 import { NavigationIndependentTree } from "@react-navigation/native";
 
-const [fontLoaded, fontError] = useFonts({
-  "outfit": require("../assets/fonts/Outfit-Regular.ttf"),
+const [fontsLoaded, fonterror] = useFonts({
+  'outfit': require("../assets/fonts/Outfit-Regular.ttf"),
   "outfit-bold": require("../assets/fonts/Outfit-Bold.ttf"),
   "outfit-medium": require("../assets/fonts/Outfit-Medium.ttf"),
 });
+
+
 export const AuthContext = createContext(null);
 export default function Page() {
   const [auth, setAuth] = useState(false);
@@ -35,7 +37,6 @@ export default function Page() {
     <View style={styles.container}>
       <AuthContext.Provider value={{ auth, setAuth } as any}>
         <NavigationIndependentTree>
-      
           <NavigationContainer>
             {auth ? <TabNavigation /> : <LoginScreen />}
           </NavigationContainer>
