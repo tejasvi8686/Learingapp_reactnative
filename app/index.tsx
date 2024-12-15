@@ -9,11 +9,10 @@ import { NavigationContainer } from "@react-navigation/native";
 import { NavigationIndependentTree } from "@react-navigation/native";
 
 const [fontsLoaded, fonterror] = useFonts({
-  'outfit': require("../assets/fonts/Outfit-Regular.ttf"),
+  outfit: require("../assets/fonts/Outfit-Regular.ttf"),
   "outfit-bold": require("../assets/fonts/Outfit-Bold.ttf"),
   "outfit-medium": require("../assets/fonts/Outfit-Medium.ttf"),
 });
-
 
 export const AuthContext = createContext(null);
 export default function Page() {
